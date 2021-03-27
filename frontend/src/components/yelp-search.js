@@ -61,23 +61,24 @@ class ParkingSearch extends React.Component {
                 <div key={idx}>
                     <a href={res.url} key={res.url}>
                         <img key={res.id} src={res.image_url} alt="" style={{ width: "500px", objectFit: "contain" }} />
-                        <div key={res.location.address1}>ADDRESS: {res.location.address1}
-                            <div key={res.location.city}>{res.location.city}</div>
-                            <div key={res.location.zipcode}>{res.location.zipcode}</div>
-                        </div>
-                        <div key={res.distance}>RATING: {res.rating}</div>
-                        <div key={res.coordinates.lattitude}>REVIEW COUNT: {res.review_count}</div>
-                        <div key={res.coordinates.longitude}>SCORE: {res.score}</div>
                     </a>
+                    <div key={res.location.address1}>ADDRESS: {res.location.address1}
+                        <div key={res.location.city}>{res.location.city}</div>
+                        <div key={res.location.zipcode}>{res.location.zipcode}</div>
+                    </div>
+                    <div key={res.distance}>RATING: {res.rating}</div>
+                    <div key={res.coordinates.lattitude}>REVIEW COUNT: {res.review_count}</div>
+                    <div key={res.coordinates.longitude}>SCORE: {res.score}</div>
                 </div>
             )
         });
         return (
             <div>
-                <h1>Mac's Yelp Parking Search</h1>
+                <h1 style={{ textAlign: "center" }}>Mac's Yelp Parking Search</h1>
                 <form
                     onSubmit={this.runSearch}>
                     <input placeholder="Search By City"
+                        style={{ display: "flex", margin: "auto" }}
                         type="text"
                         onChange={this.addToSearch()}
                         value={this.state.searchTerms}>
